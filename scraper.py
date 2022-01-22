@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
+import time
 
 def find_pormotion():
     html_txt = requests.get('https://fr.myprotein.com/').text
@@ -14,3 +15,8 @@ def find_pormotion():
             return
 
 
+if __name__ == '__main__':
+    open("https://fr.myprotein.com/", 'r')
+    while True:
+        find_pormotion()
+        time.sleep(12 * 60 * 60)
